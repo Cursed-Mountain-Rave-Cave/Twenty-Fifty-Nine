@@ -5,7 +5,6 @@ using UnityEngine;
 public class CheckListShower : MonoBehaviour
 {
     public GameObject Canvas;
-    bool onShow;
     void Start()
     {
         onShow = false;

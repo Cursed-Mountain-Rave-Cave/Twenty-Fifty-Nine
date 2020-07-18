@@ -7,29 +7,34 @@ using UnityEngine.UI;
 public class CheckListView : MonoBehaviour
 {
     public List<Text> List = new List<Text>();
-    public Dictionary<string,Text> Dict = new Dictionary<string,Text>();
+    public List<RawImage> CheckBox = new List<RawImage>();
+    public Dictionary<string,RawImage> Dict = new  Dictionary<string,RawImage>();
     void Start()
     {
         CheckList<string>.Init(new List<string>(){
             "baltika","pivo","pivas","nevskoe","jenia"
         });
-        using(var enumerator = List.GetEnumerator())
+        this.initCheckListView();
+        
+    }
+    void initCheckListView()
+    {
+        using(var TextBoxEnumerator = List.GetEnumerator())
+        using(var CheckBoxEnumerator = CheckBox.GetEnumerator())
         {
             foreach(var item in CheckList<string>.getList())
             {
-                if(enumerator.MoveNext())
+                if(TextBoxEnumerator.MoveNext() && CheckBoxEnumerator.MoveNext())
                 {
-                    if(enumerator.Current != null)
+                    if(TextBoxEnumerator.Current != null && CheckBoxEnumerator.Current != null)
                     {
-                        enumerator.Current.text = item;
-                        Dict.Add(item,enumerator.Current);
+                        TextBoxEnumerator.Current.text = item;
+                        Dict.Add(item,CheckBoxEnumerator.Current);
                     }
                 }               
             }
         }
-        
     }
-
     void Update()
     {
         
