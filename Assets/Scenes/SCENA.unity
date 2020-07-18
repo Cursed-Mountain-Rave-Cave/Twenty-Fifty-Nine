@@ -289,7 +289,6 @@ GameObject:
   - component: {fileID: 833959997}
   - component: {fileID: 833959996}
   - component: {fileID: 833959995}
-  - component: {fileID: 833959994}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -297,19 +296,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &833959994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 833959993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9973d9eb7e1051f4b9d9263070e00a75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  List: []
 --- !u!114 &833959995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -738,6 +724,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1826784853}
   - component: {fileID: 1826784852}
+  - component: {fileID: 1826784854}
   m_Layer: 0
   m_Name: GayManager
   m_TagString: Untagged
@@ -777,6 +764,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1826784854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826784851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7f87459d0256724e9684bcb6c7f7880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Canvas: {fileID: 833959993}
 --- !u!1 &1847660729
 GameObject:
   m_ObjectHideFlags: 0
