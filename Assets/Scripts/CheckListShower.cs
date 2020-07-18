@@ -13,10 +13,13 @@ public class CheckListShower : MonoBehaviour
     }
     void Update()
     {
+        if(Input.GetKeyUp(KeyCode.E))
+        {
+            Canvas?.SetActive(false);
+        }
         if(Input.GetKeyDown(KeyCode.E))
         {
-           this.onShow = !this.onShow;
-            Canvas?.SetActive(onShow);
+            Canvas?.SetActive(true);
         }
     }
 }
