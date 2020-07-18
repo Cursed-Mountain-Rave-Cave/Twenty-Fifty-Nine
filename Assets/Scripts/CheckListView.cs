@@ -6,18 +6,30 @@ using UnityEngine.UI;
 
 public class CheckListView : MonoBehaviour
 {
-    public List<GameObject> List = new List<GameObject>();
-    public Dictionary<string,GameObject> Dict = new Dictionary<string,GameObject>();
+    public List<Text> List = new List<Text>();
+    public Dictionary<string,Text> Dict = new Dictionary<string,Text>();
     void Start()
     {
         CheckList<string>.Init(new List<string>(){
             "baltika","pivo","pivas","nevskoe","jenia"
         });
-        CheckList<string>.getList()?.ForEach((x)=>{
-            if(List.GetEnumerator().MoveNext())
-                this.Dict.Add(x,List.GetEnumerator().Current);
-        });
+        using(var enumerator = List.GetEnumerator())
+        {
+            foreach(var item in CheckList<string>.getList())
+            {
+                if(enumerator.MoveNext())
+                {
+                    if(enumerator.Current != null)
+                    {
+                        enumerator.Current.text = item;
+                        Dict.Add(item,enumerator.Current);
+                    }
+                }               
+            }
+        }
+        
     }
+
     void Update()
     {
         
