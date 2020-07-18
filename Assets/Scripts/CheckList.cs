@@ -22,5 +22,9 @@ public static class CheckList<T>
     {
         return CheckList<T>.list;
     }
+    public static void Remove(T item)
+    {
+        CheckList<T>.list = CheckList<T>.list.Where(x => !x.Equals(item));
+    }
 
 }
