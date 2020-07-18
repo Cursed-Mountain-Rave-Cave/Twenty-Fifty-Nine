@@ -12,11 +12,11 @@ public static class CheckList<T>
     }
     public static bool Check(T item)
     {
-        return CheckList<T>.list == null?CheckList<T>.list.Contains(item) : false;
+        return !(CheckList<T>.list == null)?CheckList<T>.list.Contains(item) : false;
     }
     public static List<T> getList()
     {
-        return  CheckList<T>.list == null? CheckList<T>.list.ToList() : null;
+        return  !(CheckList<T>.list == null)? CheckList<T>.list.ToList() : null;
     }
     public static IEnumerable<T> GetIEnumerableList()
     {
