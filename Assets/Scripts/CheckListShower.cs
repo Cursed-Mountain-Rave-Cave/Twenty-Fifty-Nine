@@ -7,7 +7,6 @@ public class CheckListShower : MonoBehaviour
     public GameObject Canvas;
     void Start()
     {
-        onShow = false;
         Canvas?.SetActive(false);
     }
     void Update()
