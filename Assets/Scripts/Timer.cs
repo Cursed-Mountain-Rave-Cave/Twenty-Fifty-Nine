@@ -14,7 +14,6 @@ public class Timer : MonoBehaviour
     void Start()
     {
         this.SetTime(20,59,0f);
-        StartCoroutine(BlinkText()); 
     }
     void Update()
     {
@@ -37,15 +36,5 @@ public class Timer : MonoBehaviour
         this.Hours.text = String.Format("{0:00}",Hours);
         this.Minutes.text = String.Format("{0:00}",Minuts);
         this.Seconds.text = String.Format("{0:00}",Seconds);
-    }
-    public IEnumerator BlinkText()
-    {
-        while(true)
-        {
-            Delimeters.ForEach((x)=>x.text = "");
-            yield return new WaitForSeconds(.5f);
-            Delimeters.ForEach((x)=>x.text = ":");
-            yield return new WaitForSeconds(.5f);
-        }
     }
 }
