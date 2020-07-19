@@ -6,11 +6,13 @@ using UnityEngine.UI;
 
 public class CheckListView : MonoBehaviour
 {
+    public Texture CheckBoxTexture;
     public List<Text> List = new List<Text>();
     public List<RawImage> CheckBox = new List<RawImage>();
-    public Dictionary<string,List<RawImage>> Dict = new  Dictionary<string,List<RawImage>>();
+    public List<(string,RawImage)> LabelCheckBox = new List<(string,RawImage)>();
     void Start()
     {
+        CheckList<string>.Init(GetRandom(List.Count));
         this.initCheckListView();
     }
     void initCheckListView()
@@ -18,7 +20,7 @@ public class CheckListView : MonoBehaviour
         using(var TextBoxEnumerator = List.GetEnumerator())
         using(var CheckBoxEnumerator = CheckBox.GetEnumerator())
         {
-            foreach(var item in GetRandom(List.Count))
+            foreach(var item in CheckList<string>.list)
             {
                 if(TextBoxEnumerator.MoveNext() && CheckBoxEnumerator.MoveNext())
                 {
@@ -27,24 +29,33 @@ public class CheckListView : MonoBehaviour
                         if(TagDictionary.GetValue(item,out var label))
                         {
                             TextBoxEnumerator.Current.text = label;
-                            if(Dict.TryGetValue(item,out var list))
-                            {
-                                list.Add(CheckBoxEnumerator.Current);
-                            }
-                            else
-                            {
-                                Dict.Add(item,new List<RawImage>(){CheckBoxEnumerator.Current});
-                            }
+                            LabelCheckBox.Add((item,CheckBoxEnumerator.Current));
                         }
-
                     }
-                }               
+                }    
             }
         }
     }
     void Update()
     {
         
+    }
+    void SetCheckBox(RawImage image)
+    {
+        if(image == null)
+        {
+            image.texture = CheckBoxTexture;
+        }
+    }
+    void RemoveByTag(string tag)
+    {
+        var tags = this.LabelCheckBox.Where(x=>x.Item1 == tag);
+        if(tags.Count() != 0)
+        {
+            var item = tags.FirstOrDefault();
+            this.SetCheckBox(item.Item2);
+            this.LabelCheckBox.Remove(item);
+        }
     }
     IEnumerable<string> GetRandom(int count)
     {
