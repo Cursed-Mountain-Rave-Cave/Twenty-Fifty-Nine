@@ -10,6 +10,11 @@ public class ClickButtonsScript : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void ButtonMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     public void ButtonNext()
     {
         SceneManager.LoadScene(2);
