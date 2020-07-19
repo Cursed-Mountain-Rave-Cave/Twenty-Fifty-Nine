@@ -10,6 +10,8 @@ TagManager:
   - 4_point
   - 3_point
   - beer
+  - pivo_green
+  - pivo_brown
   layers:
   - Default
   - TransparentFX
