@@ -8,28 +8,35 @@ public class CheckListView : MonoBehaviour
 {
     public List<Text> List = new List<Text>();
     public List<RawImage> CheckBox = new List<RawImage>();
-    public Dictionary<string,RawImage> Dict = new  Dictionary<string,RawImage>();
+    public Dictionary<string,List<RawImage>> Dict = new  Dictionary<string,List<RawImage>>();
     void Start()
     {
-        CheckList<string>.Init(new List<string>(){
-            "baltika","pivo","pivas","nevskoe","jenia"
-        });
         this.initCheckListView();
-        
     }
     void initCheckListView()
     {
         using(var TextBoxEnumerator = List.GetEnumerator())
         using(var CheckBoxEnumerator = CheckBox.GetEnumerator())
         {
-            foreach(var item in CheckList<string>.getList())
+            foreach(var item in GetRandom(List.Count))
             {
                 if(TextBoxEnumerator.MoveNext() && CheckBoxEnumerator.MoveNext())
                 {
                     if(TextBoxEnumerator.Current != null && CheckBoxEnumerator.Current != null)
                     {
-                        TextBoxEnumerator.Current.text = item;
-                        Dict.Add(item,CheckBoxEnumerator.Current);
+                        if(TagDictionary.GetValue(item,out var label))
+                        {
+                            TextBoxEnumerator.Current.text = label;
+                            if(Dict.TryGetValue(item,out var list))
+                            {
+                                list.Add(CheckBoxEnumerator.Current);
+                            }
+                            else
+                            {
+                                Dict.Add(item,new List<RawImage>(){CheckBoxEnumerator.Current});
+                            }
+                        }
+
                     }
                 }               
             }
@@ -38,6 +45,13 @@ public class CheckListView : MonoBehaviour
     void Update()
     {
         
+    }
+    IEnumerable<string> GetRandom(int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            yield return TagList.Tags.getRandom();
+        }
     }
 }
 

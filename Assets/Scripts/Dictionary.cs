@@ -6,7 +6,12 @@ public static class TagDictionary
 {
     static System.Collections.Generic.Dictionary<string,string> Obj = new System.Collections.Generic.Dictionary<string, string>()
     {
-        {"baltica","Балтика 9"}
+        {"pivo_green","Пиво ЗЕЛЕНОЕ"},
+        {"sidr","СИДР"},
+        {"pivo_brown","ПИВО КОРИЧНЕВОЕ"},
+        {"shampun","ШамПанское 'Шампунь'"},
+        {"vodka","Водка Ядреная"},
+        
     };
     public static bool GetValue(string str,out string value)
     {
