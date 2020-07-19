@@ -18,19 +18,20 @@ public class CheckListShower : MonoBehaviour
         if(Input.GetKeyUp(KeyCode.E))
         {
             ViewList?.SetActive(false);
-            onShow = false;
         }
-        if(Input.GetKeyDown(KeyCode.E) && !onShow)
+
+        if(Input.GetKeyDown(KeyCode.E) && !Input.GetKey(KeyCode.Q))
         {
             ViewList?.SetActive(true);
             onShow = true;
         }
+
         if(Input.GetKeyUp(KeyCode.Q))
         {
             Phone?.SetActive(false);
             onShow = false;
         }
-        if(Input.GetKeyDown(KeyCode.Q) && !onShow)
+        if(Input.GetKeyDown(KeyCode.Q) && !Input.GetKey(KeyCode.E))
         {
             Phone?.SetActive(true);
              onShow = true;
