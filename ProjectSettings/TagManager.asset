@@ -16,6 +16,12 @@ TagManager:
   - shampun
   - sidr
   - koniak
+  - kvass
+  - brandy
+  - colonge
+  - cucumber
+  - vine
+  - kassa
   layers:
   - Default
   - TransparentFX

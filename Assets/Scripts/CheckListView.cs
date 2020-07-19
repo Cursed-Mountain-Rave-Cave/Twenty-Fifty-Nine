@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CheckListView : MonoBehaviour
 {
@@ -47,6 +48,12 @@ public class CheckListView : MonoBehaviour
                 if (this.RemoveByTag(hit.collider.tag))
                 {
                     Destroy(hit.collider.gameObject);
+                }
+
+                if(hit.collider.tag == "kassa" && LabelCheckBox.Count == 0)
+                {
+                    Cursor.visible = true;
+                    SceneManager.LoadScene(4);
                 }
             }
         }  
