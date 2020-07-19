@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
     public Camera not_camera;
     public CharacterController charController;
     public float gravity;
-    float y = 0;
     void Start()
     {
         
@@ -38,7 +37,6 @@ public class PlayerController : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
         charController.Move(move * speed * Time.deltaTime);
 
-        y += gravity * Time.deltaTime;
-        charController.Move(new Vector3(0,y,0) * Time.deltaTime);
+        charController.Move(new Vector3(0,gravity,0) * Time.deltaTime);
     }
 }
