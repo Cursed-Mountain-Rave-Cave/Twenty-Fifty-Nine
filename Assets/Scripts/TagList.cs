@@ -10,5 +10,11 @@ public static class TagList
         "vodka",
         "shampun",
         "sidr",
+        "koniak",
+        "brendy",
+        "vine",
+        "kvass",
+        "colonge",
+        "cucumber"
     };
 }
