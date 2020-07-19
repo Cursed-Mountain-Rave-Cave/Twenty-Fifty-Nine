@@ -26,5 +26,13 @@ public static class CheckList<T>
     {
         CheckList<T>.list = CheckList<T>.list.Where(x => !x.Equals(item));
     }
+    public static bool Empty()
+    {
+        return CheckList<T>.list != null?CheckList<T>.Count() == 0 : true;
+    }
+    public static int Count()
+    {
+        return CheckList<T>.list != null?CheckList<T>.list.Count() : 0;
+    }
 
 }

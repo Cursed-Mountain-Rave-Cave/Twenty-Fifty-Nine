@@ -4,20 +4,37 @@ using UnityEngine;
 
 public class CheckListShower : MonoBehaviour
 {
-    public GameObject Canvas;
+    public GameObject ViewList;
+    public GameObject Phone;
+    public bool onShow;
     void Start()
     {
-        Canvas?.SetActive(false);
+        ViewList?.SetActive(false);
+        Phone?.SetActive(false);
+        onShow = false;
     }
     void Update()
     {
         if(Input.GetKeyUp(KeyCode.E))
         {
-            Canvas?.SetActive(false);
+            ViewList?.SetActive(false);
         }
-        if(Input.GetKeyDown(KeyCode.E))
+
+        if(Input.GetKeyDown(KeyCode.E) && !Input.GetKey(KeyCode.Q))
         {
-            Canvas?.SetActive(true);
+            ViewList?.SetActive(true);
+            onShow = true;
+        }
+
+        if(Input.GetKeyUp(KeyCode.Q))
+        {
+            Phone?.SetActive(false);
+            onShow = false;
+        }
+        if(Input.GetKeyDown(KeyCode.Q) && !Input.GetKey(KeyCode.E))
+        {
+            Phone?.SetActive(true);
+             onShow = true;
         }
     }
 }
