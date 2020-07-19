@@ -7,7 +7,7 @@ public static class CheckList<T>
     public static List<T> list;
     public static void Init(IEnumerable<T> list)
     {
-        CheckList<T>.list = list?.ToList();
+        CheckList<T>.list = list.ToList();
     }
 
 }

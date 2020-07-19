@@ -12,8 +12,8 @@ public class CheckListView : MonoBehaviour
     public List<(string,RawImage)> LabelCheckBox = new List<(string,RawImage)>();
     void Start()
     {
-        this.initCheckListView();
         CheckList<string>.Init(GetRandom(List.Count));
+        this.initCheckListView();
     }
     void initCheckListView()
     {
