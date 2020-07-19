@@ -15808,6 +15808,36 @@ Transform:
 --- !u!1001 &444372234
 PrefabInstance:
   m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835228406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14ef7975e6b7522469ae8171dd6ad97c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: {fileID: 269945200}
+  Music:
+  - {fileID: 8300000, guid: ef805f1b46536bd43b940d32a232c371, type: 3}
+  - {fileID: 8300000, guid: 85c5ac60b68235040a16ca0bfe8128f9, type: 3}
+  - {fileID: 8300000, guid: c185b0a40362134418d2d258ab5603c4, type: 3}
+  - {fileID: 8300000, guid: c84a37c1349226648a726b0945617cef, type: 3}
+  - {fileID: 8300000, guid: d2deeca1a822ce74d86ebdef526e8a7f, type: 3}
+  - {fileID: 8300000, guid: 8e4c26f2548aff34b9616ec3992c2a94, type: 3}
+  - {fileID: 8300000, guid: 0f04d3ca50324fe41bdd06dd01e22d4a, type: 3}
+  - {fileID: 8300000, guid: 88d9397bf3a71134886b7c7a61cc62f4, type: 3}
+  - {fileID: 8300000, guid: 0d01cc6c1d984a643b79dde69559a055, type: 3}
+  - {fileID: 8300000, guid: d3ad4addabac66b408b0cccbab0cf313, type: 3}
+  - {fileID: 8300000, guid: d585cabe3f618194781e975adf7232c7, type: 3}
+  Add:
+  - {fileID: 8300000, guid: df28eecdec8cfdf499c60d5bd4d8aaed, type: 3}
+  - {fileID: 8300000, guid: 79c567401961a7e49ade394c0ba9fac2, type: 3}
+  - {fileID: 8300000, guid: 5cec9dcee8a067f41bae91711ea7861f, type: 3}
+  - {fileID: 8300000, guid: 3229d5a8c56634f4abfec750a4f31f97, type: 3}
+  MusicPlayer: {fileID: 1835228408}
+--- !u!82 &1835228408
+AudioSource:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
