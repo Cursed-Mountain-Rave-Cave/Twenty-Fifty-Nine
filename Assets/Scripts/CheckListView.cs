@@ -11,7 +11,6 @@ public class CheckListView : MonoBehaviour
     public List<Text> List = new List<Text>();
     public List<RawImage> CheckBox = new List<RawImage>();
     public List<(string,RawImage)> LabelCheckBox = new List<(string,RawImage)>();
-    public float MaxRaycastDistanse = 2.0F;
     void Start()
     {
         CheckList<string>.Init(GetRandom(List.Count));
@@ -38,13 +37,13 @@ public class CheckListView : MonoBehaviour
             }
         }
     }
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 0));
-            if (Physics.Raycast(ray, out hit, MaxRaycastDistanse))
+            if (Physics.SphereCast(ray, Config.SPHERECAST_SPHERE_RADIUS, out hit, Config.MAX_RAYCAST_DISTANSE))
             {
                 if (this.RemoveByTag(hit.collider.tag))
                 {
@@ -66,6 +65,17 @@ public class CheckListView : MonoBehaviour
             image.texture = CheckBoxTexture;
         }
     }
+
+    public bool HasTag(string tag)
+    {
+        var tags = this.LabelCheckBox.Where(x=>x.Item1 == tag);
+        if(tags.Count() != 0)
+        {
+            return true;
+        }
+        return false;
+    }
+
     bool RemoveByTag(string tag)
     {
         var tags = this.LabelCheckBox.Where(x=>x.Item1 == tag);
