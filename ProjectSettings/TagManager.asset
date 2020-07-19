@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - 1_point
+  - 5_point
+  - 2_point
+  - 4_point
+  - 3_point
+  - beer
   layers:
   - Default
   - TransparentFX
