@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class TagList
 {
-    static List<string> list = new List<string>(){
+    public static List<string> Tags = new List<string>(){
         "pivo_green",
         "pivo_brown",
         "vodka",
