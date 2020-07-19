@@ -30,7 +30,7 @@ public class MusicManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(((time.GetTime() > 20 && numPlay == 0) || !MusicPlayer.isPlaying) && numPlay < 3)
+        if(((time.GetTime() > 20 && numPlay == 0) || !MusicPlayer.isPlaying) && numPlay < 2)
         {
             numPlay++;
             MusicPlayer.clip = PlayOnLvl[numPlay];
