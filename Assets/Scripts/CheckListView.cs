@@ -38,7 +38,18 @@ public class CheckListView : MonoBehaviour
     }
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 0));
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (this.RemoveByTag(hit.collider.tag))
+                {
+                    Destroy(hit.collider.gameObject);
+                }
+            }
+        }  
     }
     void SetCheckBox(RawImage image)
     {
@@ -47,7 +58,7 @@ public class CheckListView : MonoBehaviour
             image.texture = CheckBoxTexture;
         }
     }
-    void RemoveByTag(string tag)
+    bool RemoveByTag(string tag)
     {
         var tags = this.LabelCheckBox.Where(x=>x.Item1 == tag);
         if(tags.Count() != 0)
@@ -55,7 +66,9 @@ public class CheckListView : MonoBehaviour
             var item = tags.FirstOrDefault();
             this.SetCheckBox(item.Item2);
             this.LabelCheckBox.Remove(item);
+            return true;
         }
+        return false;
     }
     IEnumerable<string> GetRandom(int count)
     {

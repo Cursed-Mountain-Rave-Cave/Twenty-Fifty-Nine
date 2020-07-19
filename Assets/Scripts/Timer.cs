@@ -11,6 +11,11 @@ public class Timer : MonoBehaviour
     public Text Minutes;
     public Text Seconds;
     private float time  = 0;
+
+    public float GetTime()
+    {
+        return time;
+    }
     void Start()
     {
         this.SetTime(20,59,0f);
