@@ -10,7 +10,6 @@ public static class TagList
         "vodka",
         "shampun",
         "sidr",
-        "koniak",
         "brandy",
         "vine",
         "kvass",
