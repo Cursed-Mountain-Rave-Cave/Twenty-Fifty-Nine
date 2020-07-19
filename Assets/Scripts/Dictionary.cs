@@ -9,8 +9,14 @@ public static class TagDictionary
         {"pivo_green","Пиво ЗЕЛЕНОЕ"},
         {"sidr","СИДР"},
         {"pivo_brown","ПИВО КОРИЧНЕВОЕ"},
-        {"shampun","ШамПанское 'Шампунь'"},
+        {"shampun","ШамПанское"},
         {"vodka","Водка Ядреная"},
+        {"brendy","Бренди "},
+        {"kvass","Квасец"},
+        {"colonge","Одиколон"},
+        {"cucumber","Огур. Одиколон"},
+        {"vine","Вино"},
+    
         
     };
     public static bool GetValue(string str,out string value)
