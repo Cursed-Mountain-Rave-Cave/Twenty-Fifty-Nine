@@ -53,7 +53,7 @@ public class CheckListView : MonoBehaviour
     }
     void SetCheckBox(RawImage image)
     {
-        if(image == null)
+        if(image != null)
         {
             image.texture = CheckBoxTexture;
         }
