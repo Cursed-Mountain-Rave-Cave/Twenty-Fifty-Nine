@@ -11,7 +11,7 @@ public static class TagList
         "shampun",
         "sidr",
         "koniak",
-        "brendy",
+        "brandy",
         "vine",
         "kvass",
         "colonge",
