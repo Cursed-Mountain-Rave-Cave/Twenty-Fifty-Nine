@@ -1554,10 +1554,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec96964752011514f8bab574cbeb31b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Delimeters:
+  - {fileID: 751916334}
+  - {fileID: 109172893}
   Hours: {fileID: 1818890646}
   Minutes: {fileID: 244577460}
   Seconds: {fileID: 1924569430}
-  time: 0
 --- !u!1 &1847660729
 GameObject:
   m_ObjectHideFlags: 0
