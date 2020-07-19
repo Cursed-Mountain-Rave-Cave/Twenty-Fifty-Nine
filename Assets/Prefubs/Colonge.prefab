@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 5153372651027428329}
   m_Layer: 0
   m_Name: Colonge
-  m_TagString: Untagged
+  m_TagString: colonge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
