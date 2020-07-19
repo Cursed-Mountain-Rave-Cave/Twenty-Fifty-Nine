@@ -34,7 +34,7 @@ public class Timer : MonoBehaviour
         else
         {
             this.SetTime(21,0,0f);
-            Cursor.visible = false;
+            Cursor.visible = true;
             SceneManager.LoadScene(3);
         }
     }

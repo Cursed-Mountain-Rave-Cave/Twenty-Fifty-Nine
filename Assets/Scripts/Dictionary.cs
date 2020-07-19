@@ -15,7 +15,7 @@ public static class TagDictionary
         {"kvass","Квасец"},
         {"colonge","Одиколон"},
         {"cucumber","Огур. Одиколон"},
-        {"vine","Вино"},
+        {"vine","Вино"}
     };
     public static bool GetValue(string str,out string value)
     {
