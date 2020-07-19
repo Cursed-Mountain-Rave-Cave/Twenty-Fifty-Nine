@@ -11,6 +11,7 @@ public class CheckListView : MonoBehaviour
     public List<Text> List = new List<Text>();
     public List<RawImage> CheckBox = new List<RawImage>();
     public List<(string,RawImage)> LabelCheckBox = new List<(string,RawImage)>();
+    public float MaxRaycastDistanse = 2.0F;
     void Start()
     {
         CheckList<string>.Init(GetRandom(List.Count));
@@ -43,7 +44,7 @@ public class CheckListView : MonoBehaviour
         {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 0));
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit, MaxRaycastDistanse))
             {
                 if (this.RemoveByTag(hit.collider.tag))
                 {
