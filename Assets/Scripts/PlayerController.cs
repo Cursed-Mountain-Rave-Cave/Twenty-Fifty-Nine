@@ -15,12 +15,13 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         Shifted = false;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Cursor.visible = false;
+        
 
         if (Math.Abs(not_camera.transform.rotation.eulerAngles.x - Time.deltaTime * cameraSpeed * Input.GetAxis("Mouse Y") - 180) > 90)
         {

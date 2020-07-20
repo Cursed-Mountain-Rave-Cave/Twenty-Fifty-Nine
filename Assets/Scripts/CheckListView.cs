@@ -13,6 +13,7 @@ public class CheckListView : MonoBehaviour
     public List<(string,RawImage)> LabelCheckBox = new List<(string,RawImage)>();
     public float MaxRaycastDistanse = 2.0F;
     public AudioSource GetBottle;
+    public Timer EndTime;
     void Start()
     {
         CheckList<string>.Init(GetRandom(List.Count));
@@ -56,6 +57,7 @@ public class CheckListView : MonoBehaviour
                 if(hit.collider.tag == "kassa" && LabelCheckBox.Count == 0)
                 {
                     Cursor.visible = true;
+                    GlobalVariable.time = EndTime.GetTime();
                     SceneManager.LoadScene(4);
                 }
             }
