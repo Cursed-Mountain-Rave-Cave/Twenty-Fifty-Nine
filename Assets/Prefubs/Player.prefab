@@ -41,11 +41,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 769cfe2a0e7b48d4691672f82ad69b70, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -224,6 +224,7 @@ GameObject:
   - component: {fileID: 7610409420987121458}
   - component: {fileID: 7610409420987121463}
   - component: {fileID: 7610409420987121462}
+  - component: {fileID: 8609415575579863136}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -324,9 +325,12 @@ MonoBehaviour:
   normalSpeed: 3
   cameraSpeed: 180
   not_camera: {fileID: 7610409420283564749}
-  charController: {fileID: 0}
+  charController: {fileID: 8609415575579863136}
   gravity: -9.81
-  walkSound: {fileID: 0}
+  walkSound: {fileID: 5715822077713608815}
+  typeWalk:
+  - {fileID: 8300000, guid: 769cfe2a0e7b48d4691672f82ad69b70, type: 3}
+  - {fileID: 8300000, guid: 7d12259ecba96f541a026628aef448eb, type: 3}
 --- !u!54 &7610409420987121462
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -343,3 +347,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!143 &8609415575579863136
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7610409420987121420}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}

@@ -9,10 +9,12 @@ public class PlayerController : MonoBehaviour
     public Camera not_camera;
     public CharacterController charController;
     public float gravity;
+    bool Shifted;
     public AudioSource walkSound;
+    public AudioClip[] typeWalk; // 0-нормально 1 - быстро
     void Start()
     {
-        
+        Shifted = false;
     }
 
     // Update is called once per frame
@@ -29,12 +31,22 @@ public class PlayerController : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-        if((x + z) != 0 && !walkSound.isPlaying)
+        if ((x * x + z * z) != 0)
         {
-            walkSound.Play();
+            if(!Shifted) 
+                walkSound.clip = typeWalk[0];
+            else
+                walkSound.clip = typeWalk[1];
+
+            if (!walkSound.isPlaying)
+            {
+                walkSound.Play();
+            }
+            
         }
-        else if ((x + z) == 0)
+        else
         {
+            Shifted = false;
             walkSound.Stop();
         }
 
@@ -43,6 +55,12 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             speed *= 2;
+            Shifted = true;
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            Shifted = false;
         }
 
         Vector3 move = transform.right * x + transform.forward * z;
