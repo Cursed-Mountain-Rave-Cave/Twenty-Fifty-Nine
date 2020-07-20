@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 move = transform.right * x + transform.forward * z;
 
-        charController.Move(move * speed * Time.deltaTime);
+        charController.Move(move.normalized * speed * Time.deltaTime);
 
         charController.Move(new Vector3(0,gravity,0) * Time.deltaTime);
     }
