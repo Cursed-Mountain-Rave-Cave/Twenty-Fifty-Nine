@@ -11,7 +11,7 @@ public static class TagDictionary
         {"pivo_brown","ПИВО КОРИЧНЕВОЕ"},
         {"shampun","ШамПанское"},
         {"vodka","Водка Ядреная"},
-        {"brandy","Бренди "},
+        {"brandy","Конь-як"},
         {"kvass","Квасец"},
         {"colonge","Одиколон"},
         {"cucumber","Огур. Одиколон"},

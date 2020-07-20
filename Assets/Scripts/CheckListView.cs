@@ -12,6 +12,7 @@ public class CheckListView : MonoBehaviour
     public List<RawImage> CheckBox = new List<RawImage>();
     public List<(string,RawImage)> LabelCheckBox = new List<(string,RawImage)>();
     public float MaxRaycastDistanse = 2.0F;
+    public AudioSource GetBottle;
     void Start()
     {
         CheckList<string>.Init(GetRandom(List.Count));
@@ -48,6 +49,7 @@ public class CheckListView : MonoBehaviour
             {
                 if (this.RemoveByTag(hit.collider.tag))
                 {
+                    GetBottle.Play();
                     Destroy(hit.collider.gameObject);
                 }
 
