@@ -14,6 +14,7 @@ public static class TagList
         "vine",
         "kvass",
         "colonge",
-        "cucumber"
+        "cucumber",
+        "boiara"
     };
 }
